@@ -6,23 +6,23 @@ const skillGroups = [
     category: "AI & Intelligence",
     items: [
       { name: "Gemini AI / LLMs", level: 85, color: "purple" },
-      { name: "LangChain", level: 75, color: "cyan" },
-      { name: "Vector Databases", level: 70, color: "lime" },
+      { name: "Computer Vision (ViT)", level: 75, color: "cyan" },
+      { name: "AI Automation", level: 70, color: "lime" },
     ]
   },
   {
     category: "Full-Stack Engine",
     items: [
-      { name: "Next.js 15 / React", level: 95, color: "cyan" },
-      { name: "TypeScript", level: 90, color: "purple" },
-      { name: "Supabase / PostgreSQL", level: 85, color: "coral" },
-      { name: "Node.js / Python", level: 80, color: "lime" },
+      { name: "Next.js 15 / React", level: 92, color: "cyan" },
+      { name: "TypeScript", level: 88, color: "purple" },
+      { name: "Supabase / PostgreSQL", level: 82, color: "coral" },
+      { name: "Node.js / Python", level: 75, color: "lime" },
     ]
   }
 ];
 
-const tools = ["Docker", "GitHub Actions", "Vercel", "Postman", "Figma", "Git", "Linux"];
-const learning = ["Rust", "Agentic Workflows", "Ollama (Local LLMs)"];
+const tools = ["GitHub Actions", "Vercel", "Postman", "Figma", "Git", "VS Code", "Canva", "MySQL"];
+const learning = ["Rust", "LangChain", "Ollama (Local LLMs)", "Agentic Workflows"];
 
 export default function Skills() {
   return (
@@ -46,9 +46,8 @@ export default function Skills() {
                         <span className={styles.skillPct}>{skill.level}%</span>
                       </div>
                       <div className={styles.barTrack}>
-                        {/* NO INLINE STYLES HERE anymore */}
-                        <div 
-                          className={styles.barFill} 
+                        <div
+                          className={styles.barFill}
                           data-level={skill.level}
                           data-color={skill.color}
                         />
@@ -60,23 +59,16 @@ export default function Skills() {
             ))}
           </div>
 
-          <div className={styles.toolsColumn}>
-            <div className={styles.toolCard}>
-              <h3 className={styles.subHeading}>Ecosystem & DevOps</h3>
-              <div className={styles.toolsWrap}>
-                {tools.map(tool => (
-                  <span key={tool} className={styles.toolTag}>
-                    <span className={styles.dot}>•</span> {tool}
-                  </span>
-                ))}
-              </div>
+          <div className={styles.rightCol}>
+            <h3 className={styles.subHeading}>Ecosystem & DevOps</h3>
+            <div className={styles.toolsWrap}>
+              {tools.map(tool => (
+                <span key={tool} className={styles.toolTag}>{tool}</span>
+              ))}
             </div>
 
             <div className={styles.learningBox}>
-              <div className={styles.learningHeader}>
-                <div className={styles.pulse} />
-                <p className={styles.learningTitle}>Next Frontier</p>
-              </div>
+              <p className={styles.learningTitle}>🚀 Next Frontier</p>
               <div className={styles.learningTags}>
                 {learning.map(item => (
                   <span key={item} className={styles.learningTag}>{item}</span>

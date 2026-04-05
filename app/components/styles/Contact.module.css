@@ -88,3 +88,30 @@
 .socialCard:hover .socialArrow {
   transform: translate(3px, -3px);
 }
+/* 6-column grid for socials */
+.socialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+}
+
+.socialCard[data-color="cyan"]   { background: rgba(0,200,255,0.07);  border: 1px solid rgba(0,200,255,0.2); }
+.socialCard[data-color="blue"]   { background: rgba(10,102,194,0.08); border: 1px solid rgba(10,102,194,0.25); }
+.socialCard[data-color="indigo"] { background: rgba(0,245,255,0.05);  border: 1px solid rgba(0,245,255,0.2); }
+.socialCard[data-color="green"]  { background: rgba(37,211,102,0.08); border: 1px solid rgba(37,211,102,0.25); }
+.socialCard[data-color="fb"]     { background: rgba(24,119,242,0.08); border: 1px solid rgba(24,119,242,0.25); }
+.socialCard[data-color="tg"]     { background: rgba(38,165,228,0.08); border: 1px solid rgba(38,165,228,0.25); }
+
+.socialCard[data-color="cyan"]   .socialIcon { color: #00c8ff; }
+.socialCard[data-color="blue"]   .socialIcon { color: #0A66C2; }
+.socialCard[data-color="indigo"] .socialIcon { color: #00f5ff; }
+.socialCard[data-color="green"]  .socialIcon { color: #25D366; }
+.socialCard[data-color="fb"]     .socialIcon { color: #1877F2; }
+.socialCard[data-color="tg"]     .socialIcon { color: #26A5E4; }
+
+.socialCard[data-color="cyan"]   .socialArrow { color: #00c8ff; }
+.socialCard[data-color="blue"]   .socialArrow { color: #0A66C2; }
+.socialCard[data-color="indigo"] .socialArrow { color: #00f5ff; }
+.socialCard[data-color="green"]  .socialArrow { color: #25D366; }
+.socialCard[data-color="fb"]     .socialArrow { color: #1877F2; }
+.socialCard[data-color="tg"]     .socialArrow { color: #26A5E4; }

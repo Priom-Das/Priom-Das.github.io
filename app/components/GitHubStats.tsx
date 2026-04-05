@@ -4,9 +4,9 @@ import styles from "./styles/GitHubStats.module.css";
 
 const stats = [
   { label: "Total Contributions", value: "112+", color: "cyan" },
-  { label: "Public Repos", value: "10+", color: "purple" },
+  { label: "Public Repos", value: "5", color: "purple" },
   { label: "Longest Streak", value: "4 Days", color: "coral" },
-  { label: "Code Commits", value: "High", color: "lime" },
+  { label: "Forks Received", value: "2", color: "lime" },
 ];
 
 const langs = [

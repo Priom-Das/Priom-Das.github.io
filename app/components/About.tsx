@@ -2,10 +2,10 @@
 import styles from "./styles/About.module.css";
 
 const stats = [
-  { num: "10+", label: "Projects Architected", color: "cyan" },
-  { num: "2+", label: "Years of Dev", color: "coral" },
-  { num: "5+", label: "AI Integrations", color: "lime" },
-  { num: "∞", label: "Passion for Learning", color: "purple" },
+  { num: "5+",  label: "Projects Shipped", color: "cyan" },
+  { num: "2+",  label: "Years of Dev",     color: "coral" },
+  { num: "3",   label: "AI Integrations",  color: "lime" },
+  { num: "∞",   label: "Passion for Learning", color: "purple" },
 ];
 
 export default function About() {
@@ -19,37 +19,32 @@ export default function About() {
               CRAFTING DIGITAL<br />
               <span className={styles.headingAccent}>INTELLIGENCE</span>
             </h2>
-            
+
             <p className={styles.bio}>
-              I’m a Full-Stack Developer based in Bangladesh, focused on the intersection of 
-              <strong> Next.js, Cloud Infrastructure, and AI</strong>. I don’t just write code; 
-              I build autonomous systems that solve friction in research and development.
+              I&apos;m a Full-Stack Developer from Dinajpur, Bangladesh — focused on the
+              intersection of <strong>Next.js, Supabase, and AI</strong>. I don&apos;t just write
+              code; I build systems that solve real problems for real people.
             </p>
 
             <p className={styles.bio}>
-              Through <strong className={styles.bioHighlight}>AetherRise</strong>, I’ve pioneered 
-              how students interact with academic data using semantic analysis. My background in 
-              statistical studies allows me to bridge the gap between <strong>complex data 
-              insights</strong> and <strong>intuitive user interfaces</strong>.
+              Through <strong className={styles.bioHighlight}>AetherRise</strong>, I&apos;ve
+              built how students interact with academic data — combining semantic AI analysis,
+              voice capture, OCR, and GitHub Sync into one research platform.
             </p>
 
             <p className={styles.bio}>
-              When I’m not shipping features, I’m deep-diving into Local LLMs, 
-              Vector Databases, and the future of Agentic Workflows.
+              When I&apos;m not shipping features, I&apos;m exploring Local LLMs,
+              Agentic Workflows, and the next generation of developer tools.
             </p>
 
             <div className={styles.ctaWrapper}>
-              <a href="#contact" className={styles.cta}>Let’s build the future →</a>
+              <a href="#contact" className={styles.cta}>Let&apos;s build the future →</a>
             </div>
           </div>
 
           <div className={styles.statsGrid}>
             {stats.map(s => (
-              <div
-                key={s.label}
-                className={styles.statCard}
-                data-color={s.color} // Pass the color name to CSS
-              >
+              <div key={s.label} className={styles.statCard} data-color={s.color}>
                 <div className={styles.statNum}>{s.num}</div>
                 <div className={styles.statLabel}>{s.label}</div>
               </div>
