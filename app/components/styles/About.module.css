@@ -1,0 +1,47 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5rem;
+  align-items: flex-start;
+}
+
+.headingAccent {
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text; 
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.03);
+  -webkit-backdrop-filter: blur(10px); 
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2rem;
+  transition: all 0.4s ease;
+  text-align: center;
+}
+
+.statNum {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 5px;
+  transition: color 0.3s ease;
+}
+
+/* Color & Hover Logic */
+.statCard[data-color="cyan"] .statNum { color: var(--cyan); }
+.statCard[data-color="cyan"]:hover { border-color: var(--cyan); box-shadow: 0 0 20px rgba(0, 245, 255, 0.2); }
+
+.statCard[data-color="coral"] .statNum { color: var(--coral); }
+.statCard[data-color="coral"]:hover { border-color: var(--coral); box-shadow: 0 0 20px rgba(255, 77, 109, 0.2); }
+
+.statCard[data-color="lime"] .statNum { color: var(--lime); }
+.statCard[data-color="lime"]:hover { border-color: var(--lime); box-shadow: 0 0 20px rgba(181, 255, 94, 0.2); }
+
+.statCard[data-color="purple"] .statNum { color: var(--purple); }
+.statCard[data-color="purple"]:hover { border-color: var(--purple); box-shadow: 0 0 20px rgba(157, 78, 221, 0.2); }

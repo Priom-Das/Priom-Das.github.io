@@ -1,0 +1,150 @@
+.section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.inner {
+  position: relative;
+}
+
+.tag {
+  color: var(--cyan);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  line-height: 0.9;
+  margin-bottom: 3rem;
+}
+
+.headingAccent {
+  color: transparent;
+  -webkit-text-stroke: 1px var(--text);
+  opacity: 0.5;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.statCard {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.statNum {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.statLabel {
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Language Box Styling */
+.graphBox {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2.5rem;
+}
+
+.graphLabel {
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+}
+
+.langBar {
+  display: flex;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.langSegment {
+  width: var(--w);
+  background-color: var(--c);
+  height: 100%;
+  transition: width 1s ease-in-out;
+}
+
+.langRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.langItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.langDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--c);
+  box-shadow: 0 0 8px var(--c);
+}
+
+.langName {
+  font-weight: 500;
+}
+
+.langPct {
+  color: var(--c);
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.githubBtn {
+  display: inline-block;
+  margin-top: 3rem;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.githubBtn:hover {
+  background: var(--text);
+  color: var(--bg);
+  transform: translateY(-3px);
+}
+.graphBox {
+  background: rgba(255, 255, 255, 0.02);
+  /* support for Safari */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2.5rem;
+}

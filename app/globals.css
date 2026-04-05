@@ -1,0 +1,51 @@
+/* 1. All imports must be at the very top */
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* 2. Global Variable Definitions */
+:root {
+  --bg: #070714;
+  --card: #0f0f2a;
+  --border: #1e1e4a;
+  --cyan: #00f5ff;
+  --coral: #ff4d6d;
+  --lime: #b5ff5e;
+  --purple: #9d4edd;
+  --text: #e0e0ff;
+  --muted: #7070a0;
+}
+
+/* 3. Base Styles */
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html { 
+  scroll-behavior: smooth; 
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased; /* Makes fonts look sharper on Mac/iOS */
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Custom Scrollbar (Neon Purple Theme) */
+::-webkit-scrollbar { 
+  width: 4px; 
+}
+
+::-webkit-scrollbar-track { 
+  background: var(--bg); 
+}
+
+::-webkit-scrollbar-thumb { 
+  background: var(--purple); 
+  border-radius: 2px;
+  box-shadow: 0 0 5px var(--purple); /* Added a subtle glow to match your theme */
+}

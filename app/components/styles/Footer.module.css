@@ -1,0 +1,91 @@
+.footer {
+  padding: 4rem 2rem 2rem;
+  border-top: 1px solid var(--border);
+  position: relative;
+  background: var(--bg);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  color: var(--cyan);
+  letter-spacing: 2px;
+  cursor: pointer; /* Inline style moved here */
+  display: block;
+  margin-bottom: 0.5rem;
+  transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+/* Systems Status Styling */
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  background: #b5ff5e; /* var(--lime) equivalent */
+  border-radius: 50%;
+  box-shadow: 0 0 8px #b5ff5e;
+  animation: pulse 2s infinite;
+}
+
+.statusText {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info, .copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.credit, .deployment, .copy, .rights {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.bottomGlow {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+  opacity: 0.3;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Responsive Fix */
+@media (max-width: 768px) {
+  .inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}

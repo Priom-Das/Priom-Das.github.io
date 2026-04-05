@@ -1,0 +1,67 @@
+.nav {
+  padding: 1.5rem 4rem;
+  background: transparent;
+  position: fixed; /* Ensuring it stays on top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  transition: all 0.3s ease;
+}
+
+.navScrolled {
+  background: rgba(7, 7, 20, 0.9);
+  -webkit-backdrop-filter: blur(12px); 
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 4rem; /* Subtle shrink effect on scroll */
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 900;
+  cursor: pointer; /* Moved from inline style to here */
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 2px;
+}
+
+.dot {
+  color: var(--cyan);
+  text-shadow: 0 0 10px var(--cyan);
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  color: var(--muted);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.link:hover {
+  color: var(--text);
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--cyan);
+  transition: width 0.3s ease;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+
+/* Ensure inner container is flex */
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

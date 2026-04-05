@@ -1,0 +1,90 @@
+.mainActions {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.resumeBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 2rem;
+  background: transparent;
+  border: 1px solid var(--lime);
+  color: var(--lime);
+  border-radius: 12px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.resumeBtn:hover {
+  background: var(--lime);
+  color: #000;
+  box-shadow: 0 0 20px rgba(181, 255, 94, 0.3);
+}
+
+/* Base Social Card */
+.socialCard {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  gap: 1.2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+/* Dynamic Color Logic */
+.socialCard[data-color="cyan"] { border-color: rgba(0, 245, 255, 0.2); }
+.socialCard[data-color="cyan"] .socialIcon,
+.socialCard[data-color="cyan"] .socialArrow { color: var(--cyan); }
+.socialCard[data-color="cyan"]:hover { border-color: var(--cyan); box-shadow: 0 0 15px rgba(0, 245, 255, 0.2); }
+
+.socialCard[data-color="blue"] { border-color: rgba(0, 119, 181, 0.2); }
+.socialCard[data-color="blue"] .socialIcon,
+.socialCard[data-color="blue"] .socialArrow { color: #0077b5; }
+.socialCard[data-color="blue"]:hover { border-color: #0077b5; box-shadow: 0 0 15px rgba(0, 119, 181, 0.2); }
+
+.socialCard[data-color="indigo"] { border-color: rgba(157, 78, 221, 0.2); }
+.socialCard[data-color="indigo"] .socialIcon,
+.socialCard[data-color="indigo"] .socialArrow { color: var(--purple); }
+.socialCard[data-color="indigo"]:hover { border-color: var(--purple); box-shadow: 0 0 15px rgba(157, 78, 221, 0.2); }
+
+.socialCard:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.socialIcon {
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: 'Bebas Neue', sans-serif;
+}
+
+.socialMeta {
+  flex-grow: 1;
+}
+
+.socialName {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.socialHandle {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.socialArrow {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.socialCard:hover .socialArrow {
+  transform: translate(3px, -3px);
+}

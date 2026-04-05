@@ -1,0 +1,53 @@
+.barTrack {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+.barFill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 1.5s cubic-bezier(0.1, 0, 0.2, 1);
+}
+
+/* Level Mappings */
+.barFill[data-level="95"] { width: 95%; }
+.barFill[data-level="90"] { width: 90%; }
+.barFill[data-level="85"] { width: 85%; }
+.barFill[data-level="80"] { width: 80%; }
+.barFill[data-level="75"] { width: 75%; }
+.barFill[data-level="70"] { width: 70%; }
+
+/* Color Mappings */
+.barFill[data-color="cyan"] { background: linear-gradient(90deg, var(--cyan), transparent); box-shadow: 0 0 10px rgba(0, 245, 255, 0.3); }
+.barFill[data-color="purple"] { background: linear-gradient(90deg, var(--purple), transparent); box-shadow: 0 0 10px rgba(157, 78, 221, 0.3); }
+.barFill[data-color="lime"] { background: linear-gradient(90deg, var(--lime), transparent); box-shadow: 0 0 10px rgba(181, 255, 94, 0.3); }
+.barFill[data-color="coral"] { background: linear-gradient(90deg, var(--coral), transparent); box-shadow: 0 0 10px rgba(255, 77, 109, 0.3); }
+
+.learningBox {
+  background: linear-gradient(145deg, rgba(255, 77, 109, 0.05), transparent);
+  border: 1px solid rgba(255, 77, 109, 0.2);
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+}
+
+.pulse {
+  width: 10px;
+  height: 10px;
+  background: var(--coral);
+  border-radius: 50%;
+  margin-right: 10px;
+  display: inline-block;
+  box-shadow: 0 0 10px var(--coral);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.95); opacity: 0.9; }
+  50% { transform: scale(1.2); opacity: 0.5; }
+  100% { transform: scale(0.95); opacity: 0.9; }
+}
