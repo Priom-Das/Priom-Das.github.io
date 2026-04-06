@@ -2,10 +2,10 @@
 import styles from "./styles/About.module.css";
 
 const stats = [
-  { num: "5+",  label: "Projects Shipped", color: "cyan" },
-  { num: "2+",  label: "Years of Dev",     color: "coral" },
-  { num: "3",   label: "AI Integrations",  color: "lime" },
-  { num: "∞",   label: "Passion for Learning", color: "purple" },
+  { num: "5+", label: "Projects Shipped", color: "cyan" },
+  { num: "2+", label: "Years of Dev", color: "coral" },
+  { num: "3", label: "AI Integrations", color: "lime" },
+  { num: "∞", label: "Passion for Learning", color: "purple" },
 ];
 
 export default function About() {
@@ -21,22 +21,23 @@ export default function About() {
             </h2>
 
             <p className={styles.bio}>
-              I&apos;m a Full-Stack Developer from Dinajpur, Bangladesh — focused on the
-              intersection of <strong>Next.js, Supabase, and AI</strong>. I don&apos;t just write
-              code; I build systems that solve real problems for real people.
+              I&apos;m a <strong>Full-Stack Developer & AI Engineer</strong> from
+              Dinajpur, Bangladesh — building at the intersection of
+              <strong> Next.js, Supabase, and Generative AI</strong>.
+              I don&apos;t just write code; I architect systems that eliminate
+              friction and create real impact.
             </p>
 
             <p className={styles.bio}>
-              Through <strong className={styles.bioHighlight}>AetherRise</strong>, I&apos;ve
-              built how students interact with academic data — combining semantic AI analysis,
-              voice capture, OCR, and GitHub Sync into one research platform.
+              Creator of <strong className={styles.bioHighlight}>AetherRise</strong> —
+              a production-grade AI research platform with semantic analysis, OCR,
+              voice capture, and GitHub Sync. Built for scholars who think in systems.
             </p>
 
             <p className={styles.bio}>
-              When I&apos;m not shipping features, I&apos;m exploring Local LLMs,
-              Agentic Workflows, and the next generation of developer tools.
+              Currently exploring <strong>Local LLMs, Agentic Workflows</strong>, and
+              the next wave of autonomous developer tooling.
             </p>
-
             <div className={styles.ctaWrapper}>
               <a href="#contact" className={styles.cta}>Let&apos;s build the future →</a>
             </div>

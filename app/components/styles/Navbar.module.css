@@ -1,7 +1,7 @@
 .nav {
   padding: 1.5rem 4rem;
   background: transparent;
-  position: fixed; /* Ensuring it stays on top */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -10,19 +10,31 @@
 }
 
 .navScrolled {
-  background: rgba(7, 7, 20, 0.9);
-  -webkit-backdrop-filter: blur(12px); 
+  background: rgba(7, 7, 20, 0.92);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
-  padding: 1rem 4rem; /* Subtle shrink effect on scroll */
+  padding: 0.85rem 4rem;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: 900;
-  cursor: pointer; /* Moved from inline style to here */
+  cursor: pointer;
   font-family: 'Bebas Neue', sans-serif;
   letter-spacing: 2px;
+  color: var(--text);
+  -webkit-user-select: none;
+  user-select: none;
+  z-index: 1001;
 }
 
 .dot {
@@ -30,12 +42,23 @@
   text-shadow: 0 0 10px var(--cyan);
 }
 
+/* ── Desktop links ────────────────────────────────────── */
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;               /* ← THIS was missing */
+}
+
 .link {
   position: relative;
   text-decoration: none;
   color: var(--muted);
+  font-size: 0.82rem;
   font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
   transition: color 0.3s ease;
+  white-space: nowrap;
 }
 
 .link:hover {
@@ -57,11 +80,116 @@
   width: 100%;
 }
 
-/* Ensure inner container is flex */
-.inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.navCTA {
+  padding: 8px 20px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, var(--cyan), var(--purple));
+  color: #000;
+  font-weight: 800;
+  font-size: 0.82rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.navCTA:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 245, 255, 0.3);
+}
+
+/* ── Hamburger button ─────────────────────────────────── */
+.hamburger {
+  display: none;            /* hidden on desktop */
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+
+.line {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger → X animation */
+.hamburgerActive .line:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburgerActive .line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hamburgerActive .line:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Mobile menu ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav {
+    padding: 1.2rem 1.5rem;
+  }
+
+  .navScrolled {
+    padding: 0.85rem 1.5rem;
+  }
+
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mobile dropdown menu */
+  .links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 75vw;
+    max-width: 300px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    background: rgba(7, 7, 20, 0.97);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-left: 1px solid var(--border);
+    padding: 5rem 2rem 2rem;
+    transform: translateX(100%);
+    transition: transform 0.35s ease;
+    z-index: 1000;
+  }
+
+  .linksActive {
+    transform: translateX(0);
+  }
+
+  .link {
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1rem;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .link::after {
+    display: none;
+  }
+
+  .navCTA {
+    margin-top: 1.5rem;
+    width: 100%;
+    text-align: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
 }

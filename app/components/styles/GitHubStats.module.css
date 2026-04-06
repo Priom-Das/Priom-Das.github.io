@@ -4,9 +4,7 @@
   margin: 0 auto;
 }
 
-.inner {
-  position: relative;
-}
+.inner { position: relative; }
 
 .tag {
   color: var(--cyan);
@@ -29,6 +27,7 @@
   opacity: 0.5;
 }
 
+/* Stats Cards with Data Colors */
 .statsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -42,7 +41,7 @@
   border-radius: 20px;
   padding: 2.5rem 1.5rem;
   text-align: center;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 0.3s ease;
 }
 
 .statNum {
@@ -52,6 +51,17 @@
   margin-bottom: 0.5rem;
 }
 
+/* Dynamic Colors mapping via Data Attributes (No Inline Styles) */
+[data-color="cyan"] .statNum { color: var(--cyan); }
+[data-color="purple"] .statNum { color: var(--purple); }
+[data-color="coral"] .statNum { color: var(--coral); }
+[data-color="lime"] .statNum { color: var(--lime); }
+
+/* Percent text color mapping */
+.langItem[data-color="cyan"] .langPct { color: var(--cyan); }
+.langItem[data-color="lime"] .langPct { color: var(--lime); }
+.langItem[data-color="purple"] .langPct { color: var(--purple); }
+
 .statLabel {
   color: var(--muted);
   font-size: 0.9rem;
@@ -59,9 +69,11 @@
   letter-spacing: 1px;
 }
 
-/* Language Box Styling */
+/* Graph Box */
 .graphBox {
   background: rgba(255, 255, 255, 0.02);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 2.5rem;
@@ -85,11 +97,19 @@
 }
 
 .langSegment {
-  width: var(--w);
-  background-color: var(--c);
   height: 100%;
-  transition: width 1s ease-in-out;
+  transition: width 1.5s ease-in-out;
 }
+
+/* FIX: Mapping Widths using data-pct instead of inline styles */
+.langSegment[data-pct="98"] { width: 98%; }
+.langSegment[data-pct="2"] { width: 2%; }
+.langSegment[data-pct="1"] { width: 1%; }
+
+/* Mapping Segment Colors */
+.langSegment[data-color="cyan"] { background-color: var(--cyan); }
+.langSegment[data-color="lime"] { background-color: var(--lime); }
+.langSegment[data-color="purple"] { background-color: var(--purple); }
 
 .langRow {
   display: flex;
@@ -104,22 +124,18 @@
 }
 
 .langDot {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
-  background-color: var(--c);
-  box-shadow: 0 0 8px var(--c);
 }
 
-.langName {
-  font-weight: 500;
-}
+/* Mapping Dot Colors & Glow */
+.langItem[data-color="cyan"] .langDot { background-color: var(--cyan); box-shadow: 0 0 10px var(--cyan); }
+.langItem[data-color="lime"] .langDot { background-color: var(--lime); box-shadow: 0 0 10px var(--lime); }
+.langItem[data-color="purple"] .langDot { background-color: var(--purple); box-shadow: 0 0 10px var(--purple); }
 
-.langPct {
-  color: var(--c);
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
+.langName { font-weight: 500; color: var(--text); }
+.langPct { font-size: 0.9rem; font-weight: 600; }
 
 .githubBtn {
   display: inline-block;
@@ -137,14 +153,4 @@
   background: var(--text);
   color: var(--bg);
   transform: translateY(-3px);
-}
-.graphBox {
-  background: rgba(255, 255, 255, 0.02);
-  /* support for Safari */
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-  
-  border: 1px solid var(--border);
-  border-radius: 24px;
-  padding: 2.5rem;
 }
