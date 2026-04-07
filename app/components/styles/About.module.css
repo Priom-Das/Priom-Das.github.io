@@ -144,3 +144,76 @@
     font-size: clamp(3rem, 10vw, 4.5rem);
   }
 }
+.bioContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  max-width: 850px;
+  line-height: 1.7;
+}
+
+.bioLead {
+  font-size: 1.35rem;
+  color: var(--muted);
+}
+
+.highlightWhite {
+  color: #fff; /* Pure white for authority */
+  font-weight: 700;
+}
+
+.techStack {
+  color: var(--cyan);
+  font-weight: 600;
+  text-decoration: underline rgba(0, 245, 255, 0.2) 2px;
+}
+
+.bioValue {
+  font-size: 1.1rem;
+  color: var(--muted);
+  border-left: 3px solid var(--purple);
+  padding-left: 1.2rem;
+  background: linear-gradient(to right, rgba(157, 78, 221, 0.03), transparent);
+}
+
+.highlightCyan {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.featuredBox {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(0, 245, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+
+.aetherText {
+  color: var(--cyan);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 1px;
+}
+
+.highlightLime {
+  color: var(--lime);
+}
+
+.bioFuture {
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+.remoteReady {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--lime);
+  opacity: 0.9;
+}

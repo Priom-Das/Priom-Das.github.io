@@ -20,24 +20,36 @@ export default function About() {
               <span className={styles.headingAccent}>INTELLIGENCE</span>
             </h2>
 
-            <p className={styles.bio}>
-              I&apos;m a <strong>Full-Stack Developer & AI Engineer</strong> from
-              Dinajpur, Bangladesh — building at the intersection of
-              <strong> Next.js, Supabase, and Generative AI</strong>.
-              I don&apos;t just write code; I architect systems that eliminate
-              friction and create real impact.
-            </p>
+           <div className={styles.bioContainer}>
+  {/* The Hook*/}
+  <p className={styles.bioLead}>
+    I am a <strong className={styles.highlightWhite}>Full-Stack Architect & AI Engineer</strong> specialized in 
+    designing intelligent, scalable systems using 
+    <span className={styles.techStack}> Next.js 15, Supabase, and Generative AI</span>.
+  </p>
 
-            <p className={styles.bio}>
-              Creator of <strong className={styles.bioHighlight}>AetherRise</strong> —
-              a production-grade AI research platform with semantic analysis, OCR,
-              voice capture, and GitHub Sync. Built for scholars who think in systems.
-            </p>
+  {/*Philosophy*/}
+  <p className={styles.bioValue}>
+    I don’t just write code; I architect ecosystems that <strong className={styles.highlightCyan}>bridge the gap between complex AI logic and intuitive user experiences</strong>. 
+    My goal is to eliminate friction and build products that feel like magic.
+  </p>
 
-            <p className={styles.bio}>
-              Currently exploring <strong>Local LLMs, Agentic Workflows</strong>, and
-              the next wave of autonomous developer tooling.
-            </p>
+  {/* The Masterpiece: AetherRise */}
+  <div className={styles.featuredBox}>
+    <p className={styles.bioProject}>
+      Currently scaling <strong className={styles.aetherText}>AetherRise</strong> — 
+      a production-grade AI research engine. By integrating <span className={styles.highlightWhite}>Semantic Search, OCR, and Automated Workflows</span>, 
+      I’ve built a platform that treats research notes with the same rigor as version-controlled code.
+    </p>
+  </div>
+
+  {/* Future Focus */}
+  <p className={styles.bioFuture}>
+    Deeply invested in <strong className={styles.highlightLime}>Agentic Workflows, Local LLM Orchestration</strong>, 
+    and the next generation of autonomous developer tools. 
+    <span className={styles.remoteReady}> Available for High-Impact Remote Projects Worldwide.</span>
+  </p>
+</div>
             <div className={styles.ctaWrapper}>
               <a href="#contact" className={styles.cta}>Let&apos;s build the future →</a>
             </div>

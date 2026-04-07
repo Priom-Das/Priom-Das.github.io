@@ -1,8 +1,17 @@
 "use client";
-import { useState } from "react";
+import React, { useState } from "react"; // React import
 import styles from "./styles/Contact.module.css";
 
-const socials = [
+// Social icon  interface (TypeScript)
+interface Social {
+  name: string;
+  url: string;
+  handle: string;
+  color: string;
+  icon: React.ReactNode; 
+}
+
+const socials: Social[] = [
   {
     name: "GitHub",
     url: "https://github.com/Priom-Das",

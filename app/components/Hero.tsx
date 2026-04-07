@@ -19,8 +19,8 @@ export default function Hero() {
       setTimeout(() => {
         setRoleIdx(i => (i + 1) % roles.length);
         setVisible(true);
-      }, 400); // Fade out and in effect 400ms delay --- IGNORE ---
-    }, 3000); // Change role every 3 seconds --- IGNORE ---
+      }, 400); 
+    }, 3000); 
     return () => clearInterval(interval);
   }, []);
 
@@ -30,48 +30,53 @@ export default function Hero() {
       <div className={styles.blobCyan} />
       
       <div className={styles.content}>
-        {/* Availability Badge */}
+        {/* Phase 1: Availability Badge updated for better visibility */}
         <div className={styles.badge}>
           <span className={styles.badgeDot} />
-          <span className={styles.badgeText}>Open for AI & Web Collaborations</span>
+          <span className={styles.badgeText}>Available for Remote AI & Web Projects</span>
         </div>
 
-        {/* Main Name Heading */}
         <h1 className={styles.name}>
           <span className={styles.nameFirst}>PRIOM</span>
           <span className={styles.nameLast}>DAS</span>
         </h1>
 
-        {/* Dynamic Role Section with ARIA for SEO/Accessibility */}
         <div className={styles.roleWrapper} aria-live="polite">
           <p className={`${styles.role} ${visible ? styles.roleVisible : styles.roleHidden}`}>
             <span className={styles.accentText}>⚡</span> {roles[roleIdx]}
           </p>
         </div>
 
-        {/* Bio Section - Stronger Hook */}
         <p className={styles.bio}>
           Transforming complex ideas into <span className={styles.bioHighlight}>intelligent SaaS solutions</span>. 
           Expertise in Next.js, AI Orchestration, and building the future of research with 
           <span className={styles.bioHighlight}> AetherRise</span>.
         </p>
 
-        {/* CTAs */}
+        {/* Phase 1 Upgrade: Stronger CTAs with Hire Me button */}
         <div className={styles.ctas}>
           <a href="#projects" className={styles.ctaPrimary}>
-            Explore My Work <span className={styles.arrow}>→</span>
+            View Projects <span className={styles.arrow}>→</span>
           </a>
+          
+          {/* Marketplace Polish: Dedicated Hire/Contact button */}
+          <a 
+            href="#contact" 
+            className={styles.ctaHire}
+          >
+           Contact ✉️
+          </a>
+
           <a 
             href="https://github.com/Priom-Das" 
             target="_blank" 
             rel="noopener noreferrer" 
             className={styles.ctaSecondary}
           >
-            GitHub Profile ↗
+            GitHub ↗
           </a>
         </div>
 
-        {/* Scroll Indicator */}
         <div className={styles.scrollHint}>
           <div className={styles.scrollLine} />
           <span className={styles.scrollText}>SCROLL TO DISCOVER</span>

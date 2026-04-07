@@ -203,3 +203,66 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0.4; }
 }
+/* ── Phase 1: Marketplace Polish - Hire Me Button ── */
+
+.ctaHire {
+  padding: 16px 36px;
+  border-radius: 12px;
+  background: rgba(181, 255, 94, 0.05); /* Lime tint background */
+  border: 2px solid var(--lime);
+  color: var(--lime);
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 15px rgba(181, 255, 94, 0.1);
+}
+
+.ctaHire:hover {
+  background: var(--lime);
+  color: #000;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(181, 255, 94, 0.4);
+}
+
+/* Shine Effect */
+.ctaHire::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.ctaHire:hover::after {
+  left: 100%;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 600px) {
+  .ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+  
+  .ctaPrimary, .ctaHire, .ctaSecondary {
+    justify-content: center;
+    width: 100%;
+  }
+}

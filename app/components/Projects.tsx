@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import styles from "./styles/Projects.module.css";
 
 const GitHubIcon = () => (
@@ -25,6 +26,7 @@ const projects = [
     stack: ["Next.js 15", "TypeScript", "Supabase", "Gemini AI", "PWA"],
     live: "https://aether-rise.vercel.app",
     github: "https://github.com/Priom-Das/AetherRise",
+    logo: "/assets/images/aetherrise-logo.png",
     color: "cyan",
     featured: true,
   },
@@ -77,7 +79,21 @@ export default function Projects() {
               <span className={styles.cardNumber}>0{idx + 1}</span>
 
               <div className={styles.cardTop}>
-                <h3 className={styles.cardTitle}>{p.title}</h3>
+                <div className={styles.titleWrapper}>
+                  {p.logo && (
+                    <div className={styles.inlineLogo}>
+                      <Image 
+                        src={p.logo} 
+                        alt={`${p.title} logo`} 
+                        width={32} 
+                        height={32} 
+                        className={styles.brandIcon}
+                      />
+                    </div>
+                  )}
+                  <h3 className={styles.cardTitle}>{p.title}</h3>
+                </div>
+                
                 <span className={styles.cardTag}>
                   {p.tagEmoji} {p.tag}
                 </span>
@@ -98,17 +114,30 @@ export default function Projects() {
                   rel="noopener noreferrer"
                   className={styles.cardLink}
                 >
-                  <GitHubIcon /> Source Code
+                  <GitHubIcon /> Source
                 </a>
+                
                 {p.live && (
-                  <a
-                    href={p.live}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`${styles.cardLink} ${styles.liveLink}`}
-                  >
-                    <ExternalIcon /> Launch App
-                  </a>
+                  <div className={styles.demoGroup}>
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`${styles.cardLink} ${styles.liveLink}`}
+                    >
+                      <ExternalIcon /> Demo
+                    </a>
+                    
+                    {/* Launch App  */}
+                    <a
+                      href={p.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.quickLaunch}
+                    >
+                      Launch App
+                    </a>
+                  </div>
                 )}
               </div>
             </div>
