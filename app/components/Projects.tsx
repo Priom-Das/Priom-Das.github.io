@@ -64,7 +64,7 @@ export default function Projects() {
         </h2>
 
         <div className={styles.grid}>
-          {projects.map((p, idx) => (
+          {projects.map((p) => (
             <div
               key={p.title}
               className={`${styles.card} ${p.featured ? styles.featured : ""}`}
@@ -76,7 +76,6 @@ export default function Projects() {
                 <div className={styles.featuredBadge}>✦ Featured Project</div>
               )}
 
-              <span className={styles.cardNumber}>0{idx + 1}</span>
 
               <div className={styles.cardTop}>
                 <div className={styles.titleWrapper}>
